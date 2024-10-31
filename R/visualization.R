@@ -1561,7 +1561,7 @@ netVisual_spatial <-function(net, coordinates, meta, sample.use = NULL, color.us
   # }
   # edgelist <- edgelist[-loop_curve,]
 
-  edges <- data.frame(node_coords[edgelist[,1],], node_coords[edgelist[,2],])
+  edges <- data.frame(node_coords[edgelist[,1],,drop = FALSE], node_coords[edgelist[,2],,drop = FALSE])
   colnames(edges) <- c("X1","Y1","X2","Y2")
   node_coords = data.frame(node_coords)
   node_idents = factor(cells.level, levels = cells.level)
